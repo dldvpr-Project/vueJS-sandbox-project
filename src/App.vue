@@ -6,4 +6,5 @@
 
 <style lang="scss">
 @use './assets/base.scss' as *;
+@use './assets/debug.scss' as *;
 </style>
