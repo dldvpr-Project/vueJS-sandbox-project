@@ -3,12 +3,17 @@ import TheHeader from './components/Header.vue';
 import TheFooter from './components/Footer.vue';
 import Shop from './components/Shop/Shop.vue';
 import Cart from './components/Cart/Cart.vue';
+import data from './data/products';
+
+import { reactive } from 'vue';
+import type { ProductInterface } from './interfaces/product.interface';
+const products = reactive<ProductInterface[]>(data);
 </script>
 
 <template>
   <div class="app-container">
     <TheHeader class="header" />
-    <Shop class="shop" />
+    <Shop :products="products" class="shop" />
     <Cart class="cart" />
     <TheFooter class="footer" />
   </div>
@@ -34,7 +39,7 @@ import Cart from './components/Cart/Cart.vue';
 .cart {
   grid-area: cart;
   border-left: var(--border);
-  background-color: #FFFFFF;
+  background-color: white;
 }
 .footer {
   grid-area: footer;
