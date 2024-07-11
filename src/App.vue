@@ -7,10 +7,10 @@ import Cart from './components/Cart/Cart.vue';
 
 <template>
   <div class="app-container">
-    <TheHeader class="header b1" />
-    <Shop class="shop b2" />
-    <Cart class="cart b3" />
-    <TheFooter class="footer b4" />
+    <TheHeader class="header" />
+<!--    <Shop class="shop b2" />-->
+<!--    <Cart class="cart b3" />-->
+    <TheFooter class="footer" />
   </div>
 </template>
 
