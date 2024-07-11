@@ -1,9 +1,9 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <template>
   <header class="px-20 d-flex flex-row align-items-center">
-    <a href="#" class="d-flex flex-row align-items-center mr-20">
-      <img src="../assets/logo.svg" />
+    <a class="d-flex flex-row align-items-center mr-20" href="#">
+      <img src="../assets/logo.svg"/>
       <span class="logo">Logo</span>
     </a>
     <ul class="d-flex flex-row flex-fill">
@@ -28,12 +28,15 @@
 <style lang="scss" scoped>
 header {
   background-color: var(--primary-1);
+
   a {
     color: var(--text-primary-color);
+
     img {
       width: 20px;
       margin-right: 5px;
     }
+
     .logo {
       font-weight: 700;
       font-size: 20px;

@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import TheHeader from './components/Header.vue';
 import TheFooter from './components/Footer.vue';
 import Shop from './components/Shop/Shop.vue';
 import Cart from './components/Cart/Cart.vue';
 import data from './data/products';
-import { reactive } from 'vue';
-import type { ProductInterface } from './interfaces/product.interface';
+import {reactive} from 'vue';
+import type {ProductInterface} from './interfaces/product.interface';
 
 const state = reactive<{
   products: ProductInterface[],
@@ -18,17 +18,17 @@ const state = reactive<{
 function addProductToCart(productId: number): void {
   const product = state.products.find(product => product.id === productId);
   if (product && !state.cart.find(product => product.id === productId)) {
-    state.cart.push({ ...product })
+    state.cart.push({...product})
   }
 }
 </script>
 
 <template>
   <div class="app-container">
-    <TheHeader class="header" />
-    <Shop :products="state.products" @add-product-to-cart="addProductToCart" class="shop" />
-    <Cart class="cart" />
-    <TheFooter class="footer" />
+    <TheHeader class="header"/>
+    <Shop :products="state.products" class="shop" @add-product-to-cart="addProductToCart"/>
+    <Cart class="cart"/>
+    <TheFooter class="footer"/>
   </div>
 </template>
 
@@ -43,17 +43,21 @@ function addProductToCart(productId: number): void {
   grid-template-columns: 75% 25%;
   grid-template-rows: 48px auto 48px;
 }
+
 .header {
   grid-area: header;
 }
+
 .shop {
   grid-area: shop;
 }
+
 .cart {
   grid-area: cart;
   border-left: var(--border);
   background-color: white;
 }
+
 .footer {
   grid-area: footer;
 }
