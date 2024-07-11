@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import TheHeader from './components/Header.vue';
 import TheFooter from './components/Footer.vue';
-import Shop from './components/Shop.vue';
-import Cart from './components/Cart.vue';
+import Shop from './components/Shop/Shop.vue';
+import Cart from './components/Cart/Cart.vue';
 </script>
 
 <template>
