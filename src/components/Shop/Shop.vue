@@ -5,11 +5,17 @@
   defineProps<{
     products: ProductInterface[]
   }>()
+
+  const emit = defineEmits<{
+    (e: 'addProductToCart', productId: number): void
+  }>()
 </script>
 
 <template>
   <div>
-    <ShopProductList :products="products" />
+    <ShopProductList
+        @add-product-to-cart="emit('addProductToCart', $event)"
+        :products="products" />
   </div>
 </template>
 
