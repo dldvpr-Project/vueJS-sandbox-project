@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import type {ProductInterface} from "@/interfaces/product.interface";
+import type {ProductInterface} from "@/interfaces";
 
 defineProps<{
   product: ProductInterface
