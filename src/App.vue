@@ -1,19 +1,25 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import TheHeader from './components/Header.vue';
 import TheFooter from './components/Footer.vue';
 import Shop from './components/Shop/Shop.vue';
 import Cart from './components/Cart/Cart.vue';
 import data from './data/products';
-
-import {computed, reactive} from 'vue';
-import type {ProductCartInterface, ProductInterface} from './interfaces';
+import { DEFAULT_FILTERS } from './data/filters';
+import { computed, reactive } from 'vue';
+import type {
+  FiltersInterface,
+  ProductCartInterface,
+  ProductInterface,
+} from './interfaces';
 
 const state = reactive<{
   products: ProductInterface[];
   cart: ProductCartInterface[];
+  filters: FiltersInterface;
 }>({
   products: data,
   cart: [],
+  filters: DEFAULT_FILTERS,
 });
 
 function addProductToCart(productId: number): void {
