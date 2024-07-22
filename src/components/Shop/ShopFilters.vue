@@ -6,6 +6,7 @@ import type {
 } from '../../interfaces';
 defineProps<{
   filters: FiltersInterface;
+  nbrOfProducts: number;
 }>();
 const emit = defineEmits<{
   (e: 'updateFilter', filterUpdate: FilterUpdate): void;
@@ -58,6 +59,8 @@ const emit = defineEmits<{
         {{ category }}
       </p>
     </section>
+    <small class="mb-5">Nombre de résultats: {{ nbrOfProducts }}</small>
+    <button class="btn btn-danger" @click="emit('updateFilter', {})">Supprimer les filtres</button>
   </div>
 </template>
 
