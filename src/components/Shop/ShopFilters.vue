@@ -1,4 +1,4 @@
-<script setup lang="ts">
+​​<script setup lang="ts">
 import type {
   FiltersInterface,
   FilterUpdate,
@@ -35,9 +35,9 @@ const emit = defineEmits<{
             type="radio"
             @input="emit('updateFilter', { priceRange })"
             name="priceRange"
-            :id="priceRange[0].toString()"
+            :id="priceRange[0] + ''"
         />
-        <label :for="priceRange[0].toString()">
+        <label :for="priceRange[0] + ''">
           {{
             priceRange[0] === 0
                 ? 'Tous les prix'
@@ -59,8 +59,13 @@ const emit = defineEmits<{
         {{ category }}
       </p>
     </section>
-    <small class="mb-5">Nombre de résultats: {{ nbrOfProducts }}</small>
-    <button class="btn btn-danger" @click="emit('updateFilter', {})">Supprimer les filtres</button>
+    <small class="mb-5">
+      Nombre de résultats:
+      <strong>{{ nbrOfProducts }}</strong>
+    </small>
+    <button class="btn btn-danger" @click="emit('updateFilter', {})">
+      Supprimer les filtres
+    </button>
   </div>
 </template>
 

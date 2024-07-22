@@ -3,7 +3,7 @@ import type {
   FiltersInterface,
   ProductInterface,
   FilterUpdate,
-} from '@/interfaces';
+} from '../../interfaces';
 import ShopProductList from './ShopProductList.vue';
 import ShopFilters from './ShopFilters.vue';
 
